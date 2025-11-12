@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StudyCourses — Checkout</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">StudyCourses</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:18px; padding-bottom:40px">
+    <h1 style="margin-bottom:10px">Checkout</h1>
+    <div style="display:grid; grid-template-columns: 1fr 340px; gap:16px;">
+      <form class="form" style="min-height:200px" onsubmit="event.preventDefault()">
+        <div class="kicker">Contact and Billing</div>
+        <label>Full name
+          <input id="fullname" name="fullname" required placeholder="Your name" />
+        </label>
+        <label style="margin-top:10px">Email
+          <input id="email" name="email" required type="email" placeholder="you@example.com" />
+        </label>
+        <p class="small" style="margin-top:10px">We will not actually charge you — this is a simulated checkout.</p>
+      </form>
+
+      <div id="checkout-summary"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> StudyCourses</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/data.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
